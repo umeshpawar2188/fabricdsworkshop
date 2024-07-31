@@ -1,7 +1,7 @@
 # fabricdsworkshop
 ## Deploy Storage account and Fabric capacity
 
-<span style="color:red">**Note:** Pause the fabric capacity if you are not using it, otherwise it will cost you a significant bill.</span>
+<font color="Red"><b>Note:</b> Pause the fabric capacity when it is not in use to avoid incurring significant costs.</font>
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fumeshpawar2188%2Ffabricdsworkshop%2Fmain%2Finfra%2Ffabric_storage_template.json)
 
