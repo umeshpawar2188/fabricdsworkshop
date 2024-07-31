@@ -39,13 +39,13 @@
         }
     },
     "variables": {
-        "randomString": "[substring(guid(resourceGroup().id, deployment().name), 0, 6)]"
+        
     },
     "resources": [
         {
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2021-04-01",
-            "name": "[parameters('name')]",
+            "name": "[concat(parameters('name'), 'adls')]",
             "location": "[parameters('location')]",
             "kind": "StorageV2",
             "sku": {
@@ -61,9 +61,9 @@
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
             "apiVersion": "2021-04-01",
-            "name": "[concat(format('fabds{0}adls', variables('randomString')), '/default/sampledata')]",
+            "name": "[concat(parameters('name'), 'adls/default/sampledata')]",
             "dependsOn": [
-                "[format('fabds{0}adls', variables('randomString'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', concat(parameters('name'), 'adls'))]"
             ],
             "properties": {
                 "publicAccess": "None"
@@ -87,8 +87,6 @@
             }
 
         }
-
-
-
-    ]
+   ]
 }
+
