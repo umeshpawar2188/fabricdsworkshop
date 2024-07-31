@@ -239,7 +239,6 @@
     },
     "vnetName": {
       "type": "string",
-      "defaultValue": "[concat('vnaml4bootcamp', take(newGuid(),5))]",
       "metadata": {
         "description": "Name of the VNet"
       }
