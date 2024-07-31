@@ -4,11 +4,10 @@
     "parameters": {
         "name": {
             "type": "string",
-            "defaultValue": "uksouthmedidoai2"
+            "defaultValue": "[concat('oai4bootcamp', take(newGuid(),5))]"
         },
         "location": {
-            "type": "string",
-            "defaultValue": "uksouth"
+            "type": "string"
         },
         "sku": {
             "type": "string",
@@ -39,8 +38,7 @@
             "defaultValue": "privatelink.cognitiveservices.azure.com"
         },
         "resourceGroupName": {
-            "type": "string",
-            "defaultValue": "resourceGroup"
+            "type": "string"
         },
         "resourceGroupId": {
             "type": "string",
@@ -52,8 +50,7 @@
         }
     },
     "variables": {
-        "randomString": "[substring(guid(resourceGroup().id, deployment().name), 0, 6)]",
-        "serviceName": "[concat(parameters('name'), variables('randomString'))]"
+        
     },
     "resources": [
         {
@@ -103,7 +100,7 @@
         },
         {
             "apiVersion": "2022-03-01",
-            "name": "[variables('serviceName')]",
+            "name": "[parameters('name')]",
             "location": "[parameters('location')]",
             "type": "Microsoft.CognitiveServices/accounts",
             "kind": "OpenAI",
@@ -112,7 +109,7 @@
                 "name": "[parameters('sku')]"
             },
             "properties": {
-                "customSubDomainName": "[toLower(variables('serviceName'))]",
+                "customSubDomainName": "[toLower(parameters('name'))]",
                 "publicNetworkAccess": "[if(equals(parameters('virtualNetworkType'), 'Internal'), 'Disabled', 'Enabled')]",
                 "networkAcls": {
                     "defaultAction": "[if(equals(parameters('virtualNetworkType'), 'External'), 'Deny', 'Allow')]",
@@ -131,7 +128,7 @@
             "resourceGroup": "[parameters('privateEndpoints')[copyIndex()].resourceGroup.value.name]",
             "subscriptionId": "[parameters('privateEndpoints')[copyIndex()].subscription.subscriptionId]",
             "dependsOn": [
-                "[concat('Microsoft.CognitiveServices/accounts/', variables('serviceName'))]"
+                "[concat('Microsoft.CognitiveServices/accounts/', parameters('name'))]"
             ],
             "condition": "[equals(parameters('virtualNetworkType'), 'Internal')]",
             "copy": {
@@ -157,7 +154,7 @@
                                     {
                                         "name": "[parameters('privateEndpoints')[copyIndex()].privateEndpoint.name]",
                                         "properties": {
-                                            "privateLinkServiceId": "[concat(parameters('resourceGroupId'), '/providers/Microsoft.CognitiveServices/accounts/', variables('serviceName'))]",
+                                            "privateLinkServiceId": "[concat(parameters('resourceGroupId'), '/providers/Microsoft.CognitiveServices/accounts/', parameters('name'))]",
                                             "groupIds": "[parameters('privateEndpoints')[copyIndex()].privateEndpoint.properties.privateLinkServiceConnections[0].properties.groupIds]"
                                         }
                                     }
