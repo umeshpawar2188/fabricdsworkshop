@@ -38,9 +38,6 @@
                 "type": "string",
                 "defaultValue": "privatelink.cognitiveservices.azure.com"
             },
-            "resourceGroupName": {
-                "type": "string"
-            },
             "resourceGroupId": {
                 "type": "string",
                 "defaultValue": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', parameters('resourceGroupName'))]"
