@@ -20,7 +20,8 @@
       "type": "string",
       "metadata": {
         "description": "Specifies the location for workspace."
-      }
+      },
+      "defaultValue": "[resourceGroup().location]"
     },
     "identityType": {
       "type": "string",
@@ -238,7 +239,7 @@
     },
     "vnetName": {
       "type": "string",
-      "defaultValue": "[format('vn{0}', uniqueString(resourceGroup().id, parameters('workspaceName')))]",
+      "defaultValue": "[concat('vnaml4bootcamp', take(newGuid(),5))]",
       "metadata": {
         "description": "Name of the VNet"
       }
