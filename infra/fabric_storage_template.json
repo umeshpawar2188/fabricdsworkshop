@@ -31,15 +31,21 @@
             ],
             "metadata": {
                 "description": "The SKU for the fabric capacity."
-            }
-        },
+            }}
+            ,
+            "admin_email_id": {
+                "type": "string",
+                "metadata": {
+                    "description": "Email id of the admin user, this email id whould exist in the AAD tenant"
+                }
+            },
         "location": {
             "type": "string",
             "defaultValue": "[resourceGroup().location]"
         }
     },
     "variables": {
-        
+
     },
     "resources": [
         {
@@ -81,12 +87,11 @@
             "properties": {
                 "administration": {
                     "members": [
-                        "admin@MngEnvMCAP029956.onmicrosoft.com"
+                        "[parameters('admin_email_id')]"
                     ]
                 }
             }
 
         }
-   ]
+    ]
 }
-
