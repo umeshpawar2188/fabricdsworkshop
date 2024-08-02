@@ -36,7 +36,7 @@
             "fabric_capacity_admin_email_id": {
                 "type": "string",
                 "metadata": {
-                    "description": "Email id of the admin user, this email id whould exist in the AAD tenant"
+                    "description": "Email Id used for external subscription"
                 }
             },
         "location": {
