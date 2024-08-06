@@ -1,6 +1,6 @@
 # Fabric Data Science Workshop
 
-Pre-requisite Access to external subscription
+**Prerequisite**: Access to external subscription
 
 ## Deploy Storage account and Fabric capacity
 
