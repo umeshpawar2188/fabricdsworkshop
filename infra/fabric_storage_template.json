@@ -87,7 +87,7 @@
             "properties": {
                 "administration": {
                     "members": [
-                        "[parameters('admin_email_id')]"
+                        "[parameters('fabric_capacity_admin_email_id')]"
                     ]
                 }
             }
