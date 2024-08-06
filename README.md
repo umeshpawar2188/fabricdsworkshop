@@ -1,4 +1,4 @@
-# fabricdsworkshop
+# Fabric Data Science Workshop
 ## Deploy Storage account and Fabric capacity
 
 <font color="Red"><b>Note:</b> Pause the fabric capacity when it is not in use to avoid incurring significant costs.</font>
