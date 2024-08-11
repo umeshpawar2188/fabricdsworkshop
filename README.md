@@ -29,3 +29,4 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
 
 ## Create environment
 - Use the environment.yaml file from hands-on directory
+- 
