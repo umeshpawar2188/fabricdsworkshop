@@ -23,3 +23,9 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
 ## Deploy AML workspace
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fumeshpawar2188%2Ffabricdsworkshop%2Fmain%2Finfra%2Faml_template.json)
+
+
+
+
+## Create environment
+- Use the environment.yaml file from hands-on directory
