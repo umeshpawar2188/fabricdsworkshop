@@ -31,3 +31,8 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
   -Use the environment.yaml file from hands-on directory
 3. Download code from github and import notebooks in Fabric Workspace
 4. Run notebooks
+
+## Model Deployment
+1. Deploy text-embedding-ada-002
+2. gpt-35-turbo
+   
