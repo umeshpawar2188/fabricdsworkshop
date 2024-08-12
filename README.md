@@ -32,25 +32,26 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
 ## Hands-on Guide
 
 ### 1. Create Lakehouse
-- Start by creating a new Lakehouse in Microsoft Fabric and pin it as default
+- Start by creating a new Lakehouse in Microsoft Fabric and pin it as the default.
 
-### 2. Create Environment
-- Use the `environment.yaml` file located in the `hands-on` directory to set up your environment.
-
-### 3. Download the Repository from GitHub
-- Open the GitHub repository in your web browser.
+### 2. Download the Repository from GitHub
+- Open the GitHub repository in your web browser: [fabricdsworkshop](https://github.com/umeshpawar2188/fabricdsworkshop/tree/main).
 - Click on the **Code** button, then select **Download ZIP**.
 - Save the ZIP file to your local machine and extract its contents.
 
-### 4. Locate the Notebooks
+### 3. Locate the Notebooks
 - After extracting the ZIP file, navigate to the folder that contains the Jupyter notebooks.
 
-### 5. Access Microsoft Fabric
+### 4. Access Microsoft Fabric
 - Log in to the Microsoft Fabric portal.
 - Navigate to the workspace where you want to upload the notebooks.
 
-### 6. Upload Notebooks to Microsoft Fabric
+### 5. Upload Notebooks to Microsoft Fabric
 - In the Microsoft Fabric workspace, go to the **Notebooks** section.
 - Click on the **Upload** button or use the **New Notebook** dropdown and select **Upload notebook**.
 - Browse to the folder where you extracted the notebooks.
 - Select the notebooks you want to upload and click **Open**.
+
+### 6. Create Environment
+- Use the `environment.yaml` file located in the `hands-on` directory to set up your environment.
+
