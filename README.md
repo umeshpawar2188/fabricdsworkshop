@@ -24,15 +24,33 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fumeshpawar2188%2Ffabricdsworkshop%2Fmain%2Finfra%2Faml_template.json)
 
-
-## Hands-on
-1. Create lakehouse
-2. Create environment
-  -Use the environment.yaml file from hands-on directory
-3. Download code from github and import notebooks in Fabric Workspace
-4. Run notebooks
-
 ## Model Deployment
 1. Deploy text-embedding-ada-002
 2. gpt-35-turbo
    
+
+## Hands-on Guide
+
+### 1. Create Lakehouse
+- Start by creating a new Lakehouse in Microsoft Fabric and pin it as default
+
+### 2. Create Environment
+- Use the `environment.yaml` file located in the `hands-on` directory to set up your environment.
+
+### 3. Download the Repository from GitHub
+- Open the GitHub repository in your web browser.
+- Click on the **Code** button, then select **Download ZIP**.
+- Save the ZIP file to your local machine and extract its contents.
+
+### 4. Locate the Notebooks
+- After extracting the ZIP file, navigate to the folder that contains the Jupyter notebooks.
+
+### 5. Access Microsoft Fabric
+- Log in to the Microsoft Fabric portal.
+- Navigate to the workspace where you want to upload the notebooks.
+
+### 6. Upload Notebooks to Microsoft Fabric
+- In the Microsoft Fabric workspace, go to the **Notebooks** section.
+- Click on the **Upload** button or use the **New Notebook** dropdown and select **Upload notebook**.
+- Browse to the folder where you extracted the notebooks.
+- Select the notebooks you want to upload and click **Open**.
