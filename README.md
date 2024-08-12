@@ -48,8 +48,8 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
 
 ### 5. Upload Notebooks to Microsoft Fabric
 - In the Microsoft Fabric workspace, go to the **Notebooks** section.
-- Click on the **Upload** button or use the **New Notebook** dropdown and select **Upload notebook**.
-- Browse to the folder where you extracted the notebooks.
+- use the **New ** dropdown and select **Import notebook**. 
+- Then select the **Upload** and browse to the folder where you extracted the notebooks.
 - Select the notebooks you want to upload and click **Open**.
 
 ### 6. Create Environment
