@@ -24,6 +24,10 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fumeshpawar2188%2Ffabricdsworkshop%2Fmain%2Finfra%2Faml_template.json)
 
+## Deploy Azure AI Foundry Hub + Project
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fumeshpawar2188%2Ffabricdsworkshop%2Fmain%2Finfra%2Fai_foundry_template.json)
+
 ## Model Deployment
 1. Deploy text-embedding-ada-002
 2. gpt-35-turbo
@@ -64,6 +68,7 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
 | 2 | `2. OpenAI for Big Data (BYOK).ipynb` | Scaled OpenAI completions and embeddings with BYOK |
 | 3 | `3. Prebuilt Text Analytics and Translator.ipynb` | Sentiment, language detection, key-phrase extraction |
 | 4 | `4. Photo Upload and LLM Structured Output.ipynb` | Upload a photo to Azure Blob Storage, then use GPT-4o vision with tool calling to extract structured data |
+| 5 | `5. Azure AI Foundry - Photo Upload and Structured Output.ipynb` | Same flow implemented via **Azure AI Foundry** Agent Service – includes step-by-step portal setup instructions then runnable code |
 
 ### Notebook 4 – Photo Upload and LLM Structured Output
 
@@ -78,4 +83,23 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
 - Azure Storage Account (connection string + account key)
 - Azure OpenAI deployment with a vision-capable model (e.g. `gpt-4o` or `gpt-4-turbo`)
 - `azure-storage-blob` and `openai` packages (already in `environment.yaml`)
+
+### Notebook 5 – Azure AI Foundry: Photo Upload and Structured Output
+
+Implements the same photo-analysis workflow using **Azure AI Foundry** Agent Service.
+The notebook begins with **six manual setup steps** (markdown-only – nothing to run), then provides all the code once you have completed the portal steps.
+
+**Manual setup steps covered in the notebook:**
+
+| Step | What you do in the portal |
+|------|--------------------------|
+| 1 | Create a Resource Group |
+| 2 | Deploy an Azure OpenAI service and a GPT-4o model deployment |
+| 3 | Create an AI Foundry Hub, connect the OpenAI resource, and create a Project – copy the **Project Connection String** |
+| 4 | Create an Azure Blob Storage account and a `photos` container – copy the **account name and key** |
+| 5 | Assign `Azure AI Developer` and `Storage Blob Data Contributor` roles to your Managed Identity *(Fabric only)* |
+| 6 | Attach the workshop environment (from `environment.yaml`) to the notebook |
+
+**Additional prerequisites for Notebook 5:**
+- `azure-ai-projects==1.0.0` (added to `environment.yaml`)
 
