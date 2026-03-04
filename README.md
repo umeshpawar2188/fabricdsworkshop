@@ -27,6 +27,7 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
 ## Model Deployment
 1. Deploy text-embedding-ada-002
 2. gpt-35-turbo
+3. gpt-4o (required for the Photo Upload & LLM Structured Output notebook)
    
 
 ## Hands-on Guide
@@ -54,4 +55,27 @@ Reference - https://learn.microsoft.com/en-us/azure/search/search-get-started-ar
 
 ### 6. Create Environment
 - Use the `environment.yaml` file located in the `hands-on` directory to set up your environment.
+
+## Notebooks
+
+| # | Notebook | Description |
+|---|----------|-------------|
+| 1 | `1. OpenAI in Fabric Synapse ML.ipynb` | Using Azure OpenAI via SynapseML pre-built models |
+| 2 | `2. OpenAI for Big Data (BYOK).ipynb` | Scaled OpenAI completions and embeddings with BYOK |
+| 3 | `3. Prebuilt Text Analytics and Translator.ipynb` | Sentiment, language detection, key-phrase extraction |
+| 4 | `4. Photo Upload and LLM Structured Output.ipynb` | Upload a photo to Azure Blob Storage, then use GPT-4o vision with tool calling to extract structured data |
+
+### Notebook 4 – Photo Upload and LLM Structured Output
+
+**What it does:**
+1. Uploads a local image to an Azure Blob Storage container.
+2. Generates a time-limited SAS URL for the uploaded blob.
+3. Sends the image URL to an Azure OpenAI **GPT-4o** (vision-capable) deployment via the Chat Completions API.
+4. Forces the model to call a predefined **tool** (`extract_image_details`) so the response is fully structured JSON containing fields such as description, main subject, dominant colors, detected objects, scene type, and any visible text.
+5. Loads the structured output into a **Spark DataFrame** ready for Lakehouse storage or downstream analytics.
+
+**Additional prerequisites for Notebook 4:**
+- Azure Storage Account (connection string + account key)
+- Azure OpenAI deployment with a vision-capable model (e.g. `gpt-4o` or `gpt-4-turbo`)
+- `azure-storage-blob` and `openai` packages (already in `environment.yaml`)
 
